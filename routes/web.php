@@ -17,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-use App\Http\Controllers\MyPlaceController;
-Route::get('/my_page', [MyPlaceController::class, 'index']);
+use App\Http\Controllers\PostsController;
+Route::get('/posts', [PostsController::class, 'index']);
+Route::get('/posts/create', [PostsController::class, 'create']);
+Route::get('/posts/update', [PostsController::class, 'update']);
+Route::get('/posts/delete', [PostsController::class, 'delete']);
+Route::get('/posts/first_or_ctreate', [PostsController::class, 'firstOrCreate']);
+Route::get('/posts/update_or_ctreate', [PostsController::class, 'updateOrCreate']);
